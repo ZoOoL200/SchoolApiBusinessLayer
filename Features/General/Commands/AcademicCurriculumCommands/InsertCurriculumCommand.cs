@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace SchoolApiBusinessLayer.Features.General.Commands.AcademicCurriculumCommands
 {
-    public record InsertCurriculumCommand(InsertCurriculumDto curriculum) :IRequest<GetCurriculumDto>
+    /// <summary>
+    /// Command for inserting a range academic curriculum into the system.
+    /// </summary>
+    /// <param name="curriculum">collection of entity objects <see cref="InsertCurriculumDto"/></param>
+    public record InsertCurriculumCommand(ICollection<InsertCurriculumDto> curriculums) : IRequest<List<GetCurriculumDto>>
     {
     }
 }

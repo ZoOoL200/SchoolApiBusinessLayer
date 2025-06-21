@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace SchoolApiBusinessLayer.MappingProfiles.General.AcademicCurriculumMapers
 {
+    /// <summary>
+    /// Profile for mapping between UpdateCurriculumDto and AcademicCurriculum.
+    /// </summary>
     public class UpdateCurriculumProfile : Profile
     {
         public UpdateCurriculumProfile()

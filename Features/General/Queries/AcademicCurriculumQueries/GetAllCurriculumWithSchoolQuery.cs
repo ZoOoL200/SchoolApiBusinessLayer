@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace SchoolApiBusinessLayer.Features.General.Queries.AcademicCurriculumQueries
 {
     /// <summary>
-    /// Query to retrieve all academic curriculums.
+    /// Query to retrieve all academic curriculums along with their associated schools.
     /// </summary>
-    public record GetAllCurriculumQuery : IRequest<List<GetCurriculumDto>>
+    public record GetAllCurriculumWithSchoolQuery : IRequest<ICollection<GetCurriculumWithSchoolsDtos>>
     {
     }
 }

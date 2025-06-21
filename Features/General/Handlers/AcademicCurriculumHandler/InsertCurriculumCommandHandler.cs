@@ -13,21 +13,24 @@ using System.Threading.Tasks;
 
 namespace SchoolApiBusinessLayer.Features.General.Handlers.AcademicCurriculumHandler
 {
-    public class InsertCurriculumCommandHandler : IRequestHandler<InsertCurriculumCommand, GetCurriculumDto>
+    /// <summary>
+    /// Handler for inserting a range of academic curriculums into the system.
+    /// </summary>
+    public class InsertCurriculumCommandHandler : IRequestHandler<InsertCurriculumCommand, List<GetCurriculumDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public InsertCurriculumCommandHandler(IUnitOfWork unitOfWork , IMapper mapper)
+        public InsertCurriculumCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<GetCurriculumDto> Handle(InsertCurriculumCommand request, CancellationToken cancellationToken)
+        public async Task<List<GetCurriculumDto>> Handle(InsertCurriculumCommand request, CancellationToken cancellationToken)
         {
-            var curriculum = _mapper.Map<AcademicCurriculum>(request.curriculum);
-            await _unitOfWork.AcademicCurriculum.AddAsync(curriculum);
+            var curriculums = _mapper.Map<List<AcademicCurriculum>>(request.curriculums);
+            await _unitOfWork.AcademicCurriculum.AddAsync(curriculums);
             await _unitOfWork.CompleteAsync();
-            return _mapper.Map<GetCurriculumDto>(curriculum);
+            return _mapper.Map<List<GetCurriculumDto>>(curriculums);
         }
     }
 }

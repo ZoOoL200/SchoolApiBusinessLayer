@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace SchoolApiBusinessLayer.Features.General.Commands.AcademicCurriculumCommands
 {
-    public record UpdateCurriculumCommand(UpdateCurriculumDto curriculum) : IRequest<UpdateCurriculumDto>
+    /// <summary>
+    /// Command to update an existing curriculum in the system.
+    /// </summary>
+    /// <param name="curriculum">entity object <see cref="UpdateCurriculumDto"/></param>
+    public record UpdateCurriculumCommand(ICollection<UpdateCurriculumDto> curriculums) : IRequest<List<UpdateCurriculumDto>>
     {
     }
 }

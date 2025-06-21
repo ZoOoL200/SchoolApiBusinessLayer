@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace SchoolApiBusinessLayer.MappingProfiles.General.AcademicCurriculumMapers
 {
     /// <summary>
-    /// Profile for mapping InsertCurriculumDto to AcademicCurriculum entity.
+    /// Profile for mapping AcademicCurriculum to GetCurriculumWithSchoolsDtos.
     /// </summary>
-    public class InsertCurriculumProfile :Profile
+    public class GetCurriculumWithSchoolProfile :Profile
     {
-        public InsertCurriculumProfile()
+        public GetCurriculumWithSchoolProfile()
         {
-            // Create a mapping from InsertCurriculumDto to AcademicCurriculum
-            CreateMap<InsertCurriculumDto, AcademicCurriculum>();
+            // Mapping from AcademicCurriculum to GetCurriculumWithSchoolsDtos
+            CreateMap<AcademicCurriculum, GetCurriculumWithSchoolsDtos>();
         }
     }
 }

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace SchoolApiBusinessLayer.Features.General.Handlers.AcademicCurriculumHandler
 {
+    /// <summary>
+    /// Handler for deleting a curriculum.
+    /// </summary>
     public class DeleteCurriculumCommandHandler : IRequestHandler<DeleteCurriculumCommand, GetCurriculumDto>
     {
         private readonly IUnitOfWork _unitOfWork;
